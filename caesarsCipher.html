@@ -1,0 +1,106 @@
+<html>
+  <head>
+    <title>Chronic Ink Tattoos Assessment - Ceaser's Cipher</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
+    />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="myapp.css" />
+    <script src="caesarsCipher.js"></script>
+    <script>
+      function getResults() {
+        var message = document.getElementById("txtMessage").value;
+        var key = document.getElementById("txtKey").value;
+
+        if (message.length <= 0) {
+          document.getElementById("lblErrorMessage").innerHTML =
+            "<b><u>Error: </u></b> Your Message is Empty! Please, Enter something to be encoded.";
+        } else {
+          message = message.toUpperCase();
+          message = message.replaceAll(" ", "");
+          document.getElementById("lblEnteredMessage").innerHTML =
+            "Your Entered Message: '<b><u>" + message + "</u></b>'";
+          encodedMessage = encryptCaesar(message, key);
+          document.getElementById("lblEncodedMessage").innerHTML =
+            "Your Encoded Message is: <b><u>" + encodedMessage + "</u></b>";
+        }
+      }
+    </script>
+  </head>
+
+  <body>
+    <!-- Header Starts -->
+    <div class="myappHeader">
+      <h1 class="">
+        Chronic Ink Tattoos - Technical Assessment | By
+        <b class="heavy-font">Jainam Shah</b>
+      </h1>
+    </div>
+    <!-- Header Ends -->
+
+    <!-- Body Starts -->
+    <div class="myappBody">
+      <h1>Ceaser's Cipher</h1>
+      <div class="ItsAForm">
+        <form>
+          <div class="form-group">
+            <label for="txtString">Enter any string Encode</label>
+            <input
+              type="text"
+              class="form-control"
+              id="txtMessage"
+              aria-describedby="stringHelp"
+              placeholder="Enter String"
+            />
+            <small id="stringHelp" class="form-text text-muted"
+              >Warning: Do not share your secret key!!</small
+            >
+
+            <input
+              type="number"
+              class="form-control"
+              id="txtKey"
+              aria-describedby="keyHelp"
+              placeholder="Enter Key"
+              max="25"
+              min="0"
+            />
+            <small id="keyHelp" class="form-text text-muted"
+              >Warning: Key should be less 26 only.</small
+            >
+          </div>
+          <button type="button" class="btn btn-primary" onclick="getResults();">
+            Get Results
+          </button>
+          <div id="outputHolder">
+            <h4 id="lblEnteredMessage"></h4>
+            <h4 id="lblEncodedMessage" style="color: green"></h4>
+            <h4 id="lblErrorMessage" style="color: red"></h4>
+          </div>
+        </form>
+      </div>
+    </div>
+    <!-- Body Ends -->
+
+    <!-- Footer Starts -->
+    <div class="myappFooter">
+      <div class="row" style="font-size: 18px">
+        <a href="index.html"> Visit Home </a> |
+        <a href="jscode.html"> View all JavaScript (Logic) Code </a>
+      </div>
+      <h4>
+        Designed & Developed By <a href="#"> Jainam Shah </a> | Visit the source
+        code here :
+        <a
+          href="https://github.com/git-jainamshah/Chronic-Ink-Tattoos---Technical-Assessment-By-Jainam-Shah"
+          >GitHub Link</a
+        >
+      </h4>
+    </div>
+    <!-- Footer Ends -->
+  </body>
+</html>

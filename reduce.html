@@ -1,0 +1,129 @@
+<html>
+  <head>
+    <title>Chronic Ink Tattoos Assessment - Reduce</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
+    />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="myapp.css" />
+    <script src="reduce.js"></script>
+    <script>
+      function getResults() {
+        var getArray = document.getElementById("txtArray").value.trim();
+        if(getArray.length > 0){
+          if(getArray.includes(",")){
+            var reducer = "";
+            var checkIfNumeric = getArray.replaceAll(",", "");
+            
+            var array = [];
+            array = getArray.split(",");
+            for (let i = 0; i < array.length; i++) {
+              array[i] = array[i].trim();
+            }
+
+            //Check if it's Numeric
+            if (isNaN(checkIfNumeric)) {
+              reducer = "stringArray";
+              array.toString();
+            } else {
+              reducer = "numericArray";
+              for(let i = 0 ; i<array.length;i++){
+                array[i] = parseInt(array[i]);
+              }
+            }
+
+            console.log(array);
+            var initValue = document.getElementById("txtInitValue").value;
+            document.getElementById("lblYouEntered").innerHTML = "<b>You Entered: </b>" + array;
+            document.getElementById("lblOutput").innerHTML = "<b><u>Result:<u/></b>" + Reduce(
+              array,
+              reducer,
+              parseInt(initValue)
+            );
+          }
+          else{
+            document.getElementById("lblErrorMessage").innerHTML = "<b><u>Error:</u></b> Entry cannot be empty !!";
+          }
+        }
+        else
+        {
+          document.getElementById("lblErrorMessage").innerHTML = "<b><u>Error:</u></b> Invalid Entry!!";
+        }
+      }
+    </script>
+  </head>
+
+  <body>
+    <!-- Header Starts -->
+    <div class="myappHeader">
+      <h1 class="">
+        Chronic Ink Tattoos - Technical Assessment | By
+        <b class="heavy-font">Jainam Shah</b>
+      </h1>
+    </div>
+    <!-- Header Ends -->
+
+    <!-- Body Starts -->
+    <div class="myappBody">
+      <h1>Reduce</h1>
+      <div class="ItsAForm">
+        <form>
+          <div class="form-group">
+            <textarea
+              class="form-control"
+              id="txtArray"
+              aria-describedby="keyHelp"
+              placeholder="Enter Array for e.g 1,2,3,4,5 or String Array like Hello,My,Name,is,John"
+              rows="5"
+            ></textarea>
+            <small id="keyHelp" class="form-text text-muted"
+              >Enter all the values seprating by comma.</small
+            >
+          </div>
+          <div class="form-group">
+            <input type="number"
+              class="form-control"
+              id="txtInitValue"
+              aria-describedby="initHelp"
+              placeholder="Enter Initial Value (optional)"
+              value="0"
+            ></textarea>
+            <small id="initHelp" class="form-text text-muted"
+              >It is optional (By Default = 0).</small
+            >
+          </div>
+          <button type="button" class="btn btn-primary" onclick="getResults();">
+            Get Results
+          </button>
+          <div id="outputHolder">
+            <h4 id="lblYouEntered"></h4>
+            <h4 id="lblOutput" style="color: green"></h4>
+            <h4 id="lblErrorMessage" style="color: red"></h4>
+          </div>
+        </form>
+      </div>
+    </div>
+    <!-- Body Ends -->
+
+    <!-- Footer Starts -->
+   <div class="myappFooter">
+      <div class="row" style="font-size: 18px">
+        <a href="index.html"> Visit Home </a> |
+        <a href="jscode.html"> View all JavaScript (Logic) Code </a>
+      </div>
+      <h4>
+        Designed & Developed By <a href="#"> Jainam Shah </a> | Visit the source
+        code here :
+        <a
+          href="https://github.com/git-jainamshah/Chronic-Ink-Tattoos---Technical-Assessment-By-Jainam-Shah"
+          >GitHub Link</a
+        >
+      </h4>
+    </div>
+    <!-- Footer Ends -->
+  </body>
+</html>

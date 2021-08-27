@@ -1,0 +1,132 @@
+<html>
+  <head>
+    <title>Chronic Ink Tattoos Assessment - Circle Contains</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
+    />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="myapp.css" />
+    <script src="circleContains.js"></script>
+    <script>
+      function getResults() {
+        var circleX = parseInt(document.getElementById("txtCircleX").value);
+        var circleY = parseInt(document.getElementById("txtCircleY").value);
+        var pointX = parseInt(document.getElementById("txtPointX").value);
+        var pointY = parseInt(document.getElementById("txtPointY").value);
+        var radius = parseFloat(document.getElementById("txtRadius").value);
+
+        const myPoint = Point(circleX, circleY);
+        const myCircle = Circle(Point(pointX, pointY), radius);
+
+        if (myCircle.includes(myPoint)) {
+          document.getElementById("lblOutput").innerHTML =
+            "<span style='color:green;'>Points You are searching for are <b><u>Inside the circle</u></b>.</span>";
+        } else {
+          document.getElementById("lblOutput").innerHTML =
+            "<span style='color:red;'>Points You are searching for are <b><u>not Inside the circle</u></b>.</span>";
+        }
+
+        console.log(myCircle.includes(myPoint));
+      }
+    </script>
+  </head>
+
+  <body>
+    <!-- Header Starts -->
+    <div class="myappHeader">
+      <h1 class="">
+        Chronic Ink Tattoos - Technical Assessment | By
+        <b class="heavy-font">Jainam Shah</b>
+      </h1>
+    </div>
+    <!-- Header Ends -->
+
+    <!-- Body Starts -->
+    <div class="myappBody">
+      <h1>Circle Contains</h1>
+      <div class="ItsAForm">
+        <form>
+          <fieldset>
+            <legend>Enter Circle Details and Radius Value</legend>
+            <div class="form-group">
+              <label for="txtCircleX">Enter Circle Points X & Y</label>
+              <input
+                type="number"
+                class="form-control"
+                id="txtCircleX"
+                placeholder="Enter Circle X value"
+                style="width: 210px"
+              />
+              <input
+                type="number"
+                class="form-control"
+                id="txtCircleY"
+                placeholder="Enter Circle Y value"
+                style="width: 210px"
+              />
+            </div>
+            <div class="form-group">
+              <label for="txtRadiusValue">Enter Circle's Radius</label>
+              <input
+                type="number"
+                class="form-control"
+                id="txtRadius"
+                placeholder="Enter Circle's Radius value"
+                style="width: 210px"
+              />
+            </div>
+          </fieldset>
+          <fieldset>
+            <legend>Enter Points That you wanted to search!</legend>
+            <div class="form-group">
+              <label for="txtPointX">Enter Points X & Y</label>
+              <input
+                type="number"
+                class="form-control"
+                id="txtPointX"
+                placeholder="Enter Circle X value"
+                style="width: 210px"
+              />
+              <input
+                type="number"
+                class="form-control"
+                id="txtPointY"
+                placeholder="Enter Circle Y value"
+                style="width: 210px"
+              />
+            </div>
+          </fieldset>
+          <button type="button" class="btn btn-primary" onclick="getResults();">
+            Get Results
+          </button>
+          <br />
+          <div id="outputHolder">
+            <h3 id="lblOutput"></h3>
+          </div>
+        </form>
+      </div>
+    </div>
+    <!-- Body Ends -->
+
+    <!-- Footer Starts -->
+    <div class="myappFooter">
+      <div class="row" style="font-size: 18px">
+        <a href="index.html"> Visit Home </a> |
+        <a href="jscode.html"> View all JavaScript (Logic) Code </a>
+      </div>
+      <h4>
+        Designed & Developed By <a href="#"> Jainam Shah </a> | Visit the source
+        code here :
+        <a
+          href="https://github.com/git-jainamshah/Chronic-Ink-Tattoos---Technical-Assessment-By-Jainam-Shah"
+          >GitHub Link</a
+        >
+      </h4>
+    </div>
+    <!-- Footer Ends -->
+  </body>
+</html>

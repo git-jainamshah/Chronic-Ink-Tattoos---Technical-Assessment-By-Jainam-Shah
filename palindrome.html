@@ -1,0 +1,93 @@
+<html>
+  <head>
+    <title>Chronic Ink Tattoos Assessment - Palindrome</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
+    />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="myapp.css" />
+    <script type="text/javascript" src="palindrome.js"></script>
+
+    <script>
+      function getResults() {
+        var mystring = document.getElementById("txtString").value;
+        if (mystring.length > 0) {
+          if (isPalindrome(mystring)) {
+            document.getElementById("outputHolder").innerHTML =
+              "<h3 style='color: green;'> Your String '" +
+              mystring +
+              "' is a <b><u>Palindrome</u></b> </h3>";
+          } else {
+            document.getElementById("outputHolder").innerHTML =
+              "<h3 style='color: maroon;'> Your String '" +
+              mystring +
+              "' is <b><u>Not a Palindrome</u></b> </h3>";
+          }
+        } else {
+          document.getElementById("outputHolder").innerHTML =
+            "<h3 style='color: red;'> <b>Error: </b> Enter Any String !! Empty string will never be a palindrome :P </h3>";
+        }
+      }
+    </script>
+  </head>
+
+  <body>
+    <!-- Header Starts -->
+    <div class="myappHeader">
+      <h1 class="">
+        Chronic Ink Tattoos - Technical Assessment | By
+        <b class="heavy-font">Jainam Shah</b>
+      </h1>
+    </div>
+    <!-- Header Ends -->
+
+    <!-- Body Starts -->
+    <div class="myappBody">
+      <h1>Palindrome</h1>
+      <div class="ItsAForm">
+        <form>
+          <div class="form-group">
+            <label for="txtString">Enter any string to check</label>
+            <input
+              type="text"
+              class="form-control"
+              id="txtString"
+              aria-describedby="stringHelp"
+              placeholder="Enter String"
+            />
+            <small id="stringHelp" class="form-text text-muted"
+              >Hit Get Results button to check weather the string is palindrome
+              or not?</small
+            >
+          </div>
+          <button type="button" class="btn btn-primary" onclick="getResults();">
+            Get Results
+          </button>
+        </form>
+        <div id="outputHolder"></div>
+      </div>
+    </div>
+    <!-- Body Ends -->
+
+    <!-- Footer Starts -->
+    <div class="myappFooter">
+      <div class="row" style="font-size: 18px">
+        <a href="index.html"> Visit Home </a> |
+        <a href="jscode.html"> View all JavaScript (Logic) Code </a>
+      </div>
+      <h4>
+        Designed & Developed By <a href="#"> Jainam Shah </a> | Visit the source
+        code here :
+        <a
+          href="https://github.com/git-jainamshah/Chronic-Ink-Tattoos---Technical-Assessment-By-Jainam-Shah"
+          >GitHub Link</a
+        >
+      </h4>
+    </div>
+    <!-- Footer Ends -->
+  </body>
+</html>

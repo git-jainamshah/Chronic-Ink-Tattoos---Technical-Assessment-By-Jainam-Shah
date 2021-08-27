@@ -1,0 +1,73 @@
+body {
+  background-color: #222333;
+  color: white;
+}
+
+.super-heading {
+  font-size: 50px;
+  font-weight: 700;
+}
+
+.myappHeader {
+  padding: 5px;
+  height: max-content;
+  width: 100%;
+  text-align: center;
+}
+
+.myappBody {
+  padding: 20px 5px 20px 5px;
+  height: max-content;
+  width: 100%;
+  background-color: #35364d;
+  text-align: center;
+}
+
+.myappFooter {
+  padding: 20px;
+  height: max-content;
+  width: 100%;
+  text-align: center;
+}
+
+.heavy-font {
+  font-weight: 800;
+}
+
+.test-carousle {
+  height: max-content;
+  width: 100%;
+  padding-left: 15%;
+  padding-right: 15%;
+}
+
+.tests-links {
+  color: white;
+  text-decoration: none;
+  font-size: x-large;
+  text-align: center;
+  padding: 25px;
+}
+
+.tests-links:hover {
+  text-decoration: none;
+  background-color: #222333;
+}
+
+.ItsAForm {
+  margin-left: 15%;
+  margin-right: 15%;
+  background-color: white;
+  border-radius: 5px;
+  color: black;
+  padding: 10px;
+  text-align: left;
+}
+a {
+  color: white;
+  text-decoration: underline;
+}
+a:active {
+  color: cadetblue;
+  text-decoration: underline;
+}

@@ -1,0 +1,111 @@
+<html>
+  <head>
+    <title>Chronic Ink Tattoos Assessment - Fibonacci</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
+    />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="myapp.css" />
+    <script type="text/javascript" src="fibonacci.js"></script>
+    <script>
+      function getResults() {
+        var myNumber = parseInt(document.getElementById("txtNumber").value);
+        if (isNaN(myNumber)) {
+          alert("Enter any Number to start :)");
+        } else {
+          /*  const fetchedSeries = getFibonacciUntil(myNumber);
+          var myseries = fetchedSeries[0].toString();
+          for (i = 1; i < fetchedSeries.length; i++) {
+            myseries = myseries + "," + fetchedSeries[i].toString();
+          } */
+          if (myNumber <= 0) {
+            alert("Enter any positive integer.");
+          } else {
+            document.getElementById("labelForSeriesOutput").innerHTML =
+              "Series Output:";
+            const series = [];
+            for (let i = 0; i < myNumber; i++) {
+              series.push(getFibonacciUntil(i));
+              console.log(series);
+              document.getElementById("lblSeriesOutput").innerHTML = series;
+            }
+          }
+        }
+      }
+    </script>
+  </head>
+
+  <body>
+    <!-- Header Starts -->
+    <div class="myappHeader">
+      <h1 class="">
+        Chronic Ink Tattoos - Technical Assessment | By
+        <b class="heavy-font">Jainam Shah</b>
+      </h1>
+    </div>
+    <!-- Header Ends -->
+
+    <!-- Body Starts -->
+    <div class="myappBody">
+      <h1>Fibonacci</h1>
+      <div class="ItsAForm">
+        <form>
+          <div class="form-group">
+            <label for="txtNumber"
+              >Enter Number(N) to Define the Limit of your Fibonacci
+              Series</label
+            >
+            <input
+              type="number"
+              class="form-control"
+              id="txtNumber"
+              aria-describedby="stringHelp"
+              placeholder="Enter a Number"
+            />
+            <small id="stringHelp" class="form-text text-muted"
+              >Scroll Down if your resuklt is pretty big.</small
+            >
+          </div>
+          <button type="button" class="btn btn-primary" onclick="getResults();">
+            Get Results
+          </button>
+          <br />
+          <div
+            style="
+              width: inherit;
+              height: 100px;
+              overflow: auto;
+              color: black;
+              word-wrap: break-word;
+            "
+          >
+            <h3 id="labelForSeriesOutput"></h3>
+            <p id="lblSeriesOutput"></p>
+          </div>
+        </form>
+      </div>
+    </div>
+    <!-- Body Ends -->
+
+    <!-- Footer Starts -->
+    <div class="myappFooter">
+      <div class="row" style="font-size: 18px">
+        <a href="index.html"> Visit Home </a> |
+        <a href="jscode.html"> View all JavaScript (Logic) Code </a>
+      </div>
+      <h4>
+        Designed & Developed By <a href="#"> Jainam Shah </a> | Visit the source
+        code here :
+        <a
+          href="https://github.com/git-jainamshah/Chronic-Ink-Tattoos---Technical-Assessment-By-Jainam-Shah"
+          >GitHub Link</a
+        >
+      </h4>
+    </div>
+    <!-- Footer Ends -->
+  </body>
+</html>

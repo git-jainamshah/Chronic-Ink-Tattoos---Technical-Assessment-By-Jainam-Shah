@@ -1,0 +1,116 @@
+<html>
+  <head>
+    <title>Chronic Ink Tattoos Assessment - Circle Contains</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
+    />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="myapp.css" />
+    <script src="circleContains.js"></script>
+    <script>
+      function getResults() {
+        var circleX = parseInt(document.getElementById("txtCircleX").value);
+        var circleY = parseInt(document.getElementById("txtCircleY").value);
+        var pointX = parseInt(document.getElementById("txtPointX").value);
+        var pointY = parseInt(document.getElementById("txtPointY").value);
+        var radius = parseFloat(document.getElementById("txtRadius").value);
+
+        const myPoint = Point(circleX, circleY);
+        const myCircle = Circle(Point(pointX, pointY), radius);
+
+        if (myCircle.includes(myPoint)) {
+          document.getElementById("lblOutput").innerHTML =
+            "<span style='color:green;'>Points You are searching for are <b><u>Inside the circle</u></b>.</span>";
+        } else {
+          document.getElementById("lblOutput").innerHTML =
+            "<span style='color:red;'>Points You are searching for are <b><u>not Inside the circle</u></b>.</span>";
+        }
+
+        console.log(myCircle.includes(myPoint));
+      }
+    </script>
+  </head>
+
+  <body>
+    <!-- Header Starts -->
+    <div class="myappHeader">
+      <h1 class="">
+        Chronic Ink Tattoos - Technical Assessment | By
+        <b class="heavy-font">Jainam Shah</b>
+      </h1>
+    </div>
+    <!-- Header Ends -->
+
+    <!-- Body Starts -->
+    <div class="myappBody">
+      <div class="row">
+        <div class="col-lg-3">
+          <ul style="font-size: 18px; text-align: left; color: white">
+            <li>
+              <a href="palindrome.js" target="jscodeFrame"
+                >Palindrome: palindrome.js</a
+              >
+            </li>
+            <li>
+              <a href="fibonacci.js" target="jscodeFrame"
+                >Fibonacci: fibonacci.js</a
+              >
+            </li>
+            <li>
+              <a href="balancedParentheses.js" target="jscodeFrame"
+                >Balanced Parantheses: balancedParentheses.js</a
+              >
+            </li>
+            <li>
+              <a href="fizzBuzz.js" target="jscodeFrame"
+                >fizzBuzz: fizzBuzz.js</a
+              >
+            </li>
+            <li>
+              <a href="caesarsCipher.js" target="jscodeFrame"
+                >Ceaser's Cipher: caesarsCipher.js</a
+              >
+            </li>
+            <li>
+              <a href="reduce.js" target="jscodeFrame">Reduce: reduce.js</a>
+            </li>
+            <li>
+              <a href="circleContains.js" target="jscodeFrame"
+                >Circle Contains: circleContains.js</a
+              >
+            </li>
+          </ul>
+        </div>
+        <div class="col-lg-9">
+          <iframe
+            src="palindrome.js"
+            style="height: 400px; width: 100%; background-color: white"
+            name="jscodeFrame"
+          ></iframe>
+        </div>
+      </div>
+    </div>
+    <!-- Body Ends -->
+
+    <!-- Footer Starts -->
+    <div class="myappFooter">
+      <div class="row" style="font-size: 18px">
+        <a href="index.html"> Visit Home </a> |
+        <a href="jscode.html"> View all JavaScript (Logic) Code </a>
+      </div>
+      <h4>
+        Designed & Developed By <a href="#"> Jainam Shah </a> | Visit the source
+        code here :
+        <a
+          href="https://github.com/git-jainamshah/Chronic-Ink-Tattoos---Technical-Assessment-By-Jainam-Shah"
+          >GitHub Link</a
+        >
+      </h4>
+    </div>
+    <!-- Footer Ends -->
+  </body>
+</html>
